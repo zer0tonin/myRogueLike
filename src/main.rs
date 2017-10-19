@@ -7,6 +7,7 @@ mod Tile;
 mod Map;
 mod Utils;
 mod Config;
+mod Rect;
 
 use Tile::*;
 use Map::*;
@@ -26,9 +27,8 @@ fn main() {
 
     tcod::system::set_fps(LIMIT_FPS);
     
-    let player = Object::Object::new(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, '@', colors::WHITE);
-    let npc = Object::Object::new(SCREEN_WIDTH / 2 - 5, SCREEN_HEIGHT / 2, '@', colors::WHITE);
-    let mut objects = [player, npc];
+    let player = Object::Object::new(25, 23, '@', colors::WHITE);
+    let mut objects = [player];
 
     let mut map = make_map();
 
