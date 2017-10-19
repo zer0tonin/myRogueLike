@@ -12,6 +12,8 @@ pub fn make_map() -> Map {
     create_room(room1, &mut map);
     let room2 = Rect::new(50, 15, 10, 15);
     create_room(room2, &mut map);
+    
+    create_h_tunnel(25, 55, 23, &mut map);
 
     map
 }
