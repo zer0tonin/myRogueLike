@@ -1,4 +1,5 @@
 extern crate tcod;
+extern crate rand;
 use tcod::console::*;
 use tcod::colors;
 
@@ -27,10 +28,10 @@ fn main() {
 
     tcod::system::set_fps(LIMIT_FPS);
     
-    let player = Object::Object::new(25, 23, '@', colors::WHITE);
-    let mut objects = [player];
+    let (map, (player_x, player_y)) = make_map();
 
-    let mut map = make_map();
+    let player = Object::Object::new(player_x, player_y, '@', colors::WHITE);
+    let mut objects = [player];
 
     while !root.window_closed() {
         render_all(&mut con, &mut objects, &map);
